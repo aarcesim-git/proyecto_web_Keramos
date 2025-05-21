@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Galería | KÉRAMOS</title>
+  <link rel="stylesheet" href="../css/estilos.css" />
+</head>
+<body>
+
+ <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
+            <a href="/indext.html" class="logo-link">
+                <img src="../img/Kéramos.png" alt="Logo de KÉRAMOS" class="logo-img">
+            </a>
+        <h1 class="logo">KÉRAMOS</h1>
+        <ul class="nav-links">
+            <li><a href="../indext.html" >Inicio</a></li>
+            <li><a href="../views/galeria.html" class="activo">Galería</a></li>
+            <li><a href="../views/presupuesto.html">Presupuesto</a></li>
+            <li><a href="../views/contacto.html">Contacto</a></li>
+        </ul>
+        </nav>
+    </header>
+
+  <h1>Galería Kéramos</h1>
+
+  <!-- Botones -->
+  <div class="botones">
+    <button class="filtro-btn active" data-categoria="tazas">Tazas</button>
+    <button class="filtro-btn" data-categoria="cuencos">Cuencos</button>
+    <button class="filtro-btn" data-categoria="jarras">Jarras</button>
+    <button class="filtro-btn" data-categoria="platos">Platos</button>
+  </div>
+
+    <!-- Galería por categoría -->
+  <section class="categoria visible" data-categoria="tazas">
+    <div class="galeria">
+      <img src="../img/tazas/tazas1.jpeg" alt="Taza 1" />
+      <img src="../img/tazas/tazas2.jpeg" alt="Taza 2" />
+      <img src="../img/tazas/tazas3.jpeg" alt="Taza 3" />
+      <img src="../img/tazas/tazas4.jpeg" alt="Taza 4" />
+      <img src="../img/tazas/tazas1.jpeg" alt="Taza 1" />
+      <img src="../img/tazas/tazas2.jpeg" alt="Taza 2" />
+      <img src="../img/tazas/tazas3.jpeg" alt="Taza 3" />
+      <img src="../img/tazas/tazas4.jpeg" alt="Taza 4" />
+    </div>
+  </section>
+
+     <section class="categoria" data-categoria="cuencos">
+    <div class="galeria">
+      <img src="../img/cuencos/cuencos1.jpeg" alt="Cuenco 1" />
+      <img src="../img/cuencos/cuencos2.jpg" alt="Cuenco 2" />
+      <img src="../img/cuencos/cuencos3.jpg" alt="Cuenco 3" />
+      <img src="../img/cuencos/cuencos4.jpg" alt="Cuenco 4" />
+      <img src="../img/cuencos/cuencos1.jpeg" alt="Cuenco 1" />
+      <img src="../img/cuencos/cuencos2.jpg" alt="Cuenco 2" />
+      <img src="../img/cuencos/cuencos3.jpg" alt="Cuenco 3" />
+      <img src="../img/cuencos/cuencos4.jpg" alt="Cuenco 4" />
+    </div>
+     </section>
+
+  <section class="categoria" data-categoria="jarras">
+    <div class="galeria">
+      <img src="../img/jarras/jarras1.jpg" alt="Jarra 1" />
+      <img src="../img/jarras/jarras2.jpg" alt="Jarra 2" />
+      <img src="../img/jarras/jarras3.jpg" alt="Jarra 3" />
+      <img src="../img/jarras/jarras4.jpg" alt="Jarra 4" />
+      <img src="../img/jarras/jarras1.jpg" alt="Jarra 1" />
+      <img src="../img/jarras/jarras2.jpg" alt="Jarra 2" />
+      <img src="../img/jarras/jarras3.jpg" alt="Jarra 3" />
+      <img src="../img/jarras/jarras4.jpg" alt="Jarra 4" />
+    </div>
+  </section>
+
+  <section class="categoria" data-categoria="platos">
+    <div class="galeria">
+      <img src="../img/platos/platos1.jpg" alt="Plato 1" />
+      <img src="../img/platos/platos2.jpg" alt="Plato 2" />
+      <img src="../img/platos/platos3.jpg" alt="Plato 3" />
+      <img src="../img/platos/platos4.jpg" alt="Plato 4" />
+      <img src="../img/platos/platos1.jpg" alt="Plato 1" />
+      <img src="../img/platos/platos2.jpg" alt="Plato 2" />
+      <img src="../img/platos/platos3.jpg" alt="Plato 3" />
+      <img src="../img/platos/platos4.jpg" alt="Plato 4" />
+    </div>
+  </section>
+
+ <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2022 Kéramos </p>
+        <div class="social">
+            <a href="https://facebook.com" target="_blank" >Facebook</a> | 
+            <a href="https://instagram.com" target="_blank" >Instagram</a> | 
+            <a href="https://linkedin.com" target="_blank" >LinkedIn</a>
+        </div>
+        <p><a href="#">Aviso legal</a></p>
+    </footer>
+
+  <script src="../js/galeria.js"></script>
+</body>
+</html>
