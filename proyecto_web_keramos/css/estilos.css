@@ -168,6 +168,7 @@ text-align: center;
 color: var(--cobalto);
 margin-bottom: 2rem;
 }
+
 .galeria-inicio {
 display: flex;
 justify-content: center;
@@ -225,6 +226,17 @@ h1 {
 }
 .categoria.visible {
   display: block;
+}
+
+/* Efecto de scroll para mostrar elementos */
+.card-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.9s ease-out;
+}
+.card-scroll.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 .categoria h2 {
   color: #6a4423;
@@ -346,6 +358,18 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+/* ==CONTACTO==*/
+.info {
+  padding: 20px;
+  text-align: center;
+  
+}
+
+#map {
+  height: 300px;
+  width: 100%;
 }
 
 /* ==FOOTER== */
