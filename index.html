@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delius+Unicase:wght@400;700&family=Poiret+One&display=swap" rel="stylesheet">
+    <title>KÉRAMOS</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
+            <a href="/index.html" class="logo-link">
+                <img src="img/Kéramos.png" alt="Logo de KÉRAMOS" class="logo-img">
+            </a>
+        <h1 class="logo" >KÉRAMOS</h1>
+        <ul class="nav-links">
+            <li><a href="index.html" class="activo">Inicio</a></li>
+            <li><a href="views/galeria.html">Galería</a></li>
+            <li><a href="views/presupuesto.html">Presupuesto</a></li>
+            <li><a href="views/contacto.html">Contacto</a></li>
+        </ul>
+        </nav>
+    </header>
+
+    <!--NUESTRA HISTORIA-->
+    <section id="nuestra-historia">
+        <h2>Nuestra Historia</h2>
+        <p>
+            En un pequeño taller bañado por la luz del Mediterráneo, nació <strong>Kéramos</strong>, con una idea simple pero poderosa: devolver el alma a los objetos cotidianos. Nos inspiramos en la arcilla, un material humilde y antiguo, para crear piezas que no solo sean útiles, sino que cuenten una historia.
+        </p>
+        <p>
+            La palabra “Kéramos” proviene del griego antiguo y significa <em>barro cocido</em>. Pero para nosotros, es mucho más que eso. Es un símbolo de transformación, paciencia y arte. Cada taza, cada cuenco, cada plato o jarra que sale de nuestro taller ha sido moldeado a mano, con atención al detalle y un profundo respeto por la tradición ceramista.
+        </p>
+        <p>
+            Nuestra fundadora, fascinada desde niña por las formas imperfectas y los colores terrosos, decidió abandonar la rutina urbana para dedicarse al arte del torno y el esmalte. Así comenzó esta aventura, que hoy es compartida por un equipo de artesanos y soñadores que creen en la belleza de lo simple y lo auténtico.
+        </p>
+        <p>
+            En <strong>Kéramos</strong> no seguimos modas: seguimos fuego, tiempo y manos. Queremos que nuestras piezas acompañen tus rituales diarios —un café por la mañana, una cena especial, una charla en la cocina— y se conviertan en parte de tu propia historia.
+        </p>
+        <p class="frase-final">
+            Bienvenidos a Kéramos. Donde cada pieza tiene alma.
+        </p>
+    </section>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-texto">
+        <h2>Diseña tu vajilla, única como tú</h2>
+        <p>Elige entre diseños prediseñados o personaliza cada detalle.</p>
+        <a href="views/galeria.html" class="btn-hero">Explorar diseños</a>
+        </div>
+    </section>
+
+   <!-- SECCIONES PRINCIPALES -->
+    <section class="seccion destellos">
+        <h3>Nuestras piezas más queridas</h3>
+        <div class="galeria-inicio">
+            <article class="item">
+                <img src="img/tazas/tazas5.jpg" alt="Taza personalizada">
+                <h4>Taza con mango largo</h4>
+            </article>
+            <article class="item">
+                <img src="img/cuencos/cuencos1.jpeg" alt="Cuenco artesanal">
+                <h4>Cuenco personalizado</h4>
+            </article>
+            <article class="item">
+                <img src="img/platos/platos1.jpg" alt="Plato decorado">
+                <h4>Plato flor azul</h4>
+            </article>
+        </div>
+    </section>
+
+    <!-- SECCIÓN NOTICIAS (desde JSON) -->
+    <section class="seccion noticias">
+        <h3>Últimas novedades</h3>
+        <div id="contenedor-noticias">
+        <!-- Se cargarán noticias dinámicamente desde un archivo JSON -->
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2022 KÉRAMOS - Vajillas artesanales de cerámica. </p>
+        <div class="social">
+            <a href="https://facebook.com" target="_blank" >Facebook</a> | 
+            <a href="https://instagram.com" target="_blank" >Instagram</a> | 
+            <a href="https://linkedin.com" target="_blank" >LinkedIn</a>
+        </div>
+        <p><a href="#">Aviso legal</a></p>
+    </footer>
+
+    <script src="js/funciones.js"></script>
+    
+</body>
+
+</html>
