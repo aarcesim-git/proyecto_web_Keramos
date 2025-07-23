@@ -1,3 +1,4 @@
+/* == CARGA DE NOTICIAS == */
 document.addEventListener("DOMContentLoaded", () => {
     fetch('data/noticias.json')
       .then(response => response.json())
@@ -18,4 +19,13 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error('Error cargando las noticias:', error);
       });
   });
+
+  /** == MENU TOGGLE == */
+  document.addEventListener('DOMContentLoaded', function() {
+  const menuBtn = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  menuBtn.addEventListener('click', function() {
+    navLinks.classList.toggle('show');
+  });
+});
   
