@@ -21,10 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Descuento por plazo (si supera los 10 o 20 días se realizará un descuento)
     const dias = parseInt(plazo.value) || 0;
-    if (dias >= 10) {
-      total *= 0.9; // 10% de descuento
-    } else if (dias >= 20) {
+    if (dias >= 20) {
       total *= 0.85; // 15% de descuento
+    } else if (dias >= 10) {
+      total *= 0.90; // 10% de descuento
     }
 
     // Actualizar en pantalla con 2 decimales
