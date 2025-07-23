@@ -28,7 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Actualizar en pantalla con 2 decimales
-    precioFinal.textContent = `${total.toFixed(2)} €`;
+    const precioRedondeado = Math.floor(total * 100) / 100;
+    precioFinal.textContent = `${precioRedondeado.toFixed(2)} €`;
   }
 
   // Eventos para recalcular automáticamente
