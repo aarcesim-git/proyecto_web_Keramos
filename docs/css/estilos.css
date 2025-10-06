@@ -124,7 +124,7 @@ border-bottom: 2px solid var(--cobalto);
 
 /* == HERO == */
 .hero {
-background-image: url('../img/hero.jpg');
+background-image: url('../img/Inicio.jpeg'); 
 background-size: cover;
 background-position: center;
 height: 90vh;
@@ -133,8 +133,7 @@ align-items: center;
 justify-content: center;
 text-align: center;
 padding: 2rem;
-margin-top: 4rem;
-filter:contrast(2);
+margin-top: 4rem
 }
 .hero-texto h2 {
 font-size: 2.5rem;

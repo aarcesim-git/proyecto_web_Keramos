@@ -1,16 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
   const producto = document.getElementById('producto');
-  const plazo = document.getElementById('plazo');
   const extras = document.querySelectorAll('input[name="extras"]');
+  const urgente = document.getElementById('urgente');
   const precioFinal = document.getElementById('precioFinal');
+  const plazoInfo = document.getElementById('plazoInfo');
+  const unidades = document.getElementById('unidades');
 
+  // Función para calcular el presupuesto
   function calcularPresupuesto() {
     let total = 0;
+    let plazoDias = 7; // Plazo mínimo.
 
     // Precio del producto
     const opcion = producto.options[producto.selectedIndex];
     const precioProducto = parseFloat(opcion.getAttribute('data-precio')) || 0;
-    total += precioProducto;
+    const cantidad = parseInt(unidades.value) || 1;
+    total += precioProducto * cantidad;
 
     // Precio de extras por modificaciones
     extras.forEach(extra => {
@@ -19,12 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Descuento por plazo (si supera los 10 o 20 días se realizará un descuento)
-    const dias = parseInt(plazo.value) || 0;
-    if (dias >= 20) {
-      total *= 0.85; // 15% de descuento
-    } else if (dias >= 10) {
-      total *= 0.90; // 10% de descuento
+    //Envío urgente.
+    if ( urgente.checked) {
+      total += parseFloat(urgente.value);
+      plazoDias = 5;  // Cambia el plazo a 5 días si es urgente 
+    }else{
+      plazoDias = 7; // Plazo estándar
     }
 
     // Actualizar en pantalla con 2 decimales
@@ -34,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Eventos para recalcular automáticamente
   producto.addEventListener('change', calcularPresupuesto);
-  plazo.addEventListener('input', calcularPresupuesto);
+  urgente.addEventListener('input', calcularPresupuesto);
   extras.forEach(extra => extra.addEventListener('change', calcularPresupuesto));
 
   // Evita el envío si los datos son inválidos (validación base)
@@ -45,4 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
     }
   });
+
+  calcularPresupuesto(); 
 });

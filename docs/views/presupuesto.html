@@ -20,7 +20,7 @@
         <ul class="nav-links">
             <li><a href="../index.html" >Inicio</a></li>
             <li><a href="../views/galeria.html" >Galería</a></li>
-            <li><a href="../views/presupuesto.html "class="activo" >Presupuesto</a></li>
+            <li><a href="../views/presupuesto.html" class="activo" >Presupuesto</a></li>
             <li><a href="../views/contacto.html">Contacto</a></li>
         </ul>
         </nav>
@@ -29,10 +29,11 @@
   <main class="formulario-contenedor">
     <h1>Solicita tu presupuesto</h1>
 
-      <!-- ALERTA DE DESCUENTO -->
-  <div class="alerta-descuento" style="background:#ffe5d0; color: #000 ; border-left:5px solid #d1937a; padding:1em; margin-bottom:1em;">
-    <strong>¡Atención!</strong> Si el plazo de entrega supera los <b>10 días</b> se aplicará un <b>10% de descuento</b>.  
-    Si supera los <b>20 días</b>, el descuento será del <b>15%</b>.
+      <!-- ALERTA-->
+  <div class="alerta" style="background:#ffe5d0; color: #000 ; border-left:5px solid #d1937a; padding:1em; margin-bottom:1em;">
+    <strong>¡Atención!</strong> El grabado personalizado solo se podrá aplicar en tazas y platos, este tendrá un coste adicional de <b>5.00 €</b> que se aplicará al total del presupuesto.
+    <br>
+    <strong>Nota:</strong> El envío estándar es de <b>7 días mínimo.</b> 
   </div>
 
     <form id="formularioPresupuesto">
@@ -67,16 +68,17 @@
           <option value="juego" data-precio="40">Juego completo - 40 €</option>
         </select>
 
-        <label for="plazo">Plazo de entrega (días):</label>
-        <input type="number" id="plazo" name="plazo" min="1" value="7" />
+        <label for="unidades">Unidades:</label>
+        <input type="number" id="unidades" name="unidades" min="1" max="100" value="1" required />  
 
         <p>Extras:</p>
         <label><input type="checkbox" name="extras" value="5" /> Grabado personalizado (+5.00 €)</label>
         <label><input type="checkbox" name="extras" value="3" /> Embalaje para regalo (+3.00 €)</label>
-        <label><input type="checkbox" name="extras" value="7" /> Envío urgente (+7.00 €)</label>
+        <label><input type="checkbox" name="extras" value="6" id="urgente"/> Envío urgente (5 días, +6.00 €)</label>
 
         <div class="total">
           <p><label>Presupuesto estimado:</label> <span id="precioFinal">0.00 €</span></p>
+          <p id="plazoInfo" style="margin-top:0.5em; color:#7B9E89;"></p>
         </div>
 
         <label>
