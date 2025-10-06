@@ -124,7 +124,7 @@ border-bottom: 2px solid var(--cobalto);
 
 /* == HERO == */
 .hero {
-background-image: url('../img/Inicio.jpeg'); 
+background-image: url('../img/Inicio.jpeg');  /* width="1199" height="800" */
 background-size: cover;
 background-position: center;
 height: 90vh;

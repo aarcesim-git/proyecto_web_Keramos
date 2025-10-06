@@ -5,16 +5,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const precioFinal = document.getElementById('precioFinal');
   const plazoInfo = document.getElementById('plazoInfo');
   const unidades = document.getElementById('unidades');
+  const plazo = document.getElementById('plazo');
 
   // Función para calcular el presupuesto
   function calcularPresupuesto() {
     let total = 0;
     let plazoDias = 7; // Plazo mínimo.
+    const cantidad = parseInt(unidades.value) || 1;
 
     // Precio del producto
     const opcion = producto.options[producto.selectedIndex];
     const precioProducto = parseFloat(opcion.getAttribute('data-precio')) || 0;
-    const cantidad = parseInt(unidades.value) || 1;
     total += precioProducto * cantidad;
 
     // Precio de extras por modificaciones
@@ -24,23 +25,40 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    //Envío urgente.
+    //Envío urgente
     if ( urgente.checked) {
       total += parseFloat(urgente.value);
-      plazoDias = 5;  // Cambia el plazo a 5 días si es urgente 
+      // El envío urgente es 3 días menos del plazo calculado
+      const subida = Math.floor((cantidad - 1) / 10) * 4;
+      plazoDias = parseInt(plazo.value) + subida - 3;
+      if (plazoDias < 7) plazoDias = 7; // mínimo 7 días para urgente
     }else{
-      plazoDias = 7; // Plazo estándar
+      // Plazo estimado = lo que el usuario pone + subida por cada 10 unidades.
+      const subida = Math.floor((cantidad - 1) / 10) * 4;
+      plazoDias = parseInt(plazo.value) + subida;
+      if (plazoDias < 7) plazoDias = 7; // mínimo 7 días
+    }
+
+    // Descuento por cantidad
+    let descuento = 0;
+    if (cantidad >= 20) {
+      descuento = 3 + Math.floor((cantidad - 20) / 10) * 3;
+      if (descuento > 12) descuento = 12;
+      total = total * (1 - descuento / 100);
     }
 
     // Actualizar en pantalla con 2 decimales
     const precioRedondeado = Math.floor(total * 100) / 100;
     precioFinal.textContent = `${precioRedondeado.toFixed(2)} €`;
+    plazoInfo.textContent = `Plazo estimado de entrega: ${plazoDias} días${descuento > 0 ? ` (Descuento aplicado: ${descuento}%)` : ''}`;
   }
 
   // Eventos para recalcular automáticamente
   producto.addEventListener('change', calcularPresupuesto);
   urgente.addEventListener('input', calcularPresupuesto);
   extras.forEach(extra => extra.addEventListener('change', calcularPresupuesto));
+  unidades.addEventListener('input', calcularPresupuesto);
+  plazo.addEventListener('input', calcularPresupuesto);
 
   // Evita el envío si los datos son inválidos (validación base)
   const formulario = document.getElementById('formularioPresupuesto');
